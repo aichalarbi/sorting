@@ -1,0 +1,16 @@
+ALGORITHM check
+PROCEDURE sort(t: ARRAY_OF INTEGER[n+1], x: INTEGER)
+VAR
+    i: INTEGER;
+BEGIN
+    ind := 0;
+    REPEAT
+        IF x > t[i] THEN
+            ind := ind + 1;
+    UNTIL (ind = n) OR (x < t[i])
+    FOR i from n DOWNTO ind + 1 DO
+        t[i] := t[i + 1];
+        t[ind] := x
+FOR i FROM 0 TO n  DO
+    write(t[i])
+END_FOR
